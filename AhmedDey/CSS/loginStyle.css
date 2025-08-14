@@ -1,0 +1,255 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #0a2342; /* Bleu profond – couleur principale institutionnelle */
+  --second: #f0f4f8; /* Fond doux/gris bleuté – pour zones claires */
+  --third: #145da0; /* Bleu vif – pour actions principales (boutons, liens) */
+  --fourth: #00c49a; /* Vert turquoise – indicateur de succès, énergie verte */
+  --bk: #000000; /* Noir – pour titres, contrastes forts */
+  --wt: #ffffff; /* Blanc – texte sur fond sombre ou bouton clair */
+  --shadow: 0 6px 20px rgba(10, 35, 66, 0.15); /* Ombre douce, modernisée */
+  --radius: 12px; /* Coins arrondis adoucis, look moderne */
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: url("../IMG/bgrdv.png") no-repeat center;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+/* CONTAINER PRINCIPAL */
+#page-login {
+  background: var(--wt);
+  width: 100%;
+  max-width: 420px;
+  padding: 2rem;
+  opacity: 0.97;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ENTÊTE LOGIN */
+.top_login {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.logo_pay img {
+  width: 42px;
+  border-radius: 50%;
+  border: 2px solid var(--primary);
+}
+
+/* LANGUES */
+.list_lang {
+  display: flex;
+  gap: 10px;
+}
+
+.list_lang a {
+  display: flex;
+  align-items: center;
+  font-size: 0.85rem;
+  text-decoration: none;
+  color: var(--third);
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.list_lang a:hover,
+.list_lang a:focus {
+  text-decoration: underline;
+  color: var(--fourth);
+}
+
+.list_lang img {
+  width: 15px;
+  height: 15px;
+  margin-right: 4px;
+}
+
+/* LOGO CENTRAL */
+.logo_top {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.logo_top img {
+  width: 96px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* TEXTES D'INTRO & TITRE */
+.login_form p {
+  text-align: center;
+  font-size: 0.95em;
+  color: #444;
+  line-height: 1.6em;
+  margin-bottom: 1em;
+}
+
+.login_form h2 {
+  text-align: center;
+  color: var(--fourth);
+  font-size: 1.4em;
+  margin-bottom: 1rem;
+}
+
+/* FORMULAIRE */
+form {
+  width: 85%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+form input[type="text"],
+form input[type="password"] {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--primary);
+  font-size: 0.95em;
+  background-color: var(--wt);
+  color: var(--bk);
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+form input[type="text"]:focus,
+form input[type="password"]:focus {
+  border-color: var(--third);
+  box-shadow: 0 0 6px rgba(34, 59, 222, 0.25);
+  outline: none;
+}
+
+form input[type="submit"] {
+  padding: 12px;
+  background: var(--fourth);
+  color: var(--wt);
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+form input[type="submit"]:hover {
+  background: var(--third);
+  transform: scale(1.02);
+}
+
+/* PIED DE PAGE */
+footer {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--bk);
+  font-style: italic;
+}
+
+/* RESPONSIVE */
+@media (max-width: 450px) {
+  .top_login {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .list_lang {
+    flex-wrap: wrap;
+  }
+}
+
+/* MESSAGES D’ERREUR */
+.message-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.error-message {
+  background-color: #ffecec;
+  border: 1px solid #ff9999;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.error-message h2 {
+  color: #d32f2f;
+  margin-bottom: 10px;
+}
+
+.error-message p {
+  color: #333;
+}
+
+.error-message a {
+  color: #d32f2f;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.error-message a:hover {
+  text-decoration: underline;
+}
+.footer-copyright {
+  margin-top: 2rem;
+  padding: 1rem 0;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--bk);
+  font-style: italic;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-top: 1px solid var(--primary);
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.footer-copyright strong {
+  color: var(--third);
+}
+.btn-download {
+  display: inline-block;
+  width: 85%;
+  margin: auto;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: var(--bk);
+  color: goldenrod;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+.btn-download:hover {
+  background-color: #800000;
+}
